@@ -21,7 +21,7 @@ spec:
   destination:
     # cluster API URL
     server: https://kubernetes.default.svc
-    namespace: helm-guestbook
+    namespace: tst-env
 
   # Sync policy
   syncPolicy:

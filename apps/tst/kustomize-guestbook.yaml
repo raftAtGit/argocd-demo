@@ -17,7 +17,7 @@ spec:
   destination:
     # cluster API URL
     server: https://kubernetes.default.svc
-    namespace: kustomize-guestbook
+    namespace: tst-env
 
   # Sync policy
   syncPolicy:
