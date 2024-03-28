@@ -1,23 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kustomize-guestbook
+  name: guestbook
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/argoproj/argocd-example-apps
-    path: kustomize-guestbook  
+    path: guestbook  
     targetRevision: HEAD  
-
-    # kustomize specific config
-    kustomize:
 
   # Destination cluster and namespace to deploy the application
   destination:
     # cluster API URL
     server: https://kubernetes.default.svc
-    namespace: kustomize-guestbook
+    namespace: guestbook
 
   # Sync policy
   syncPolicy:
