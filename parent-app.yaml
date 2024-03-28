@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/raftAtGit/argocd-demo
-    path: parent-app/tst
+    path: apps/tst
     targetRevision: HEAD
   syncPolicy:
     automated:
