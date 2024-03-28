@@ -8,11 +8,8 @@ metadata:
   finalizers:
     # The default behaviour is foreground cascading deletion
     - resources-finalizer.argocd.argoproj.io
-    # Alternatively, you can use background cascading deletion
-    # - resources-finalizer.argocd.argoproj.io/background
-  # Add labels to your application object.
   labels:
-    name: guestbook
+    name: helm-guestbook
 spec:
   # The project the application belongs to.
   project: default
@@ -34,7 +31,7 @@ spec:
   destination:
     # cluster API URL
     server: https://kubernetes.default.svc
-    namespace: guestbook
+    namespace: helm-guestbook
 
   # Sync policy
   syncPolicy:
