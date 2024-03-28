@@ -1,27 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-guestbook
+  name: guestbook
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/argoproj/argocd-example-apps
-    path: helm-guestbook  
+    path: guestbook  
     targetRevision: HEAD  
-
-    # helm specific config
-    helm:
-      # Values file as block file. This takes precedence over values
-      valuesObject:
-        image:
-          tag: 0.1
 
   # Destination cluster and namespace to deploy the application
   destination:
     # cluster API URL
     server: https://kubernetes.default.svc
-    namespace: helm-guestbook
+    namespace: guestbook
 
   # Sync policy
   syncPolicy:
